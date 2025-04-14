@@ -4,14 +4,16 @@ from django.shortcuts import render
 # Create your views here.
 def index(request):
     context = {
-        'title': 'Main Page',
-        'content': 'Главная страница магазина',
-        'list': ['first', 'second'],
-        'dict': {'first': 1},
-        'is_auth': True,
+        'title': 'Home - Главная',
+        'content': 'Магазин мебели HOME'
     }
 
     return render(request, 'main/index.html', context)
 
 def about(request):
-    return HttpResponse("About site")
+    context = {
+        'title': 'Home - О нас',
+        'content': 'О нас',
+        'text_on_page': 'Текст почему этот магазин классный',
+    }
+    return render(request, 'main/about.html', context)
